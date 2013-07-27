@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+    <html class="no-js lt-ie9" lang="en">
+    <![endif]-->
+<!--[if gt IE 8]>
+        <!-->
+<html class="no-js" lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            Service Request Follow Up
+        </title>
+        <link rel="stylesheet" href="css/foundation.css">
+        <style>
+        textarea{
+                        height: 100%;
+                    }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="top-bar">
+            <ul class="title-area">
+                <!-- Title Area -->
+                <li class="name">
+                    <h1>
+                        <a href="#">Top Bar Title</a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon">
+                    <a href="#"><span>menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                    <li class="has-dropdown">
+                        <a href="#">Main Item 1</a>
+                        <ul class="dropdown">
+                            <li>
+                                <label>Section Name</label>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#" class="">Has Dropdown, Level 1</a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <a href="#">Dropdown Options</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dropdown Options</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Level 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Subdropdown Option</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Subdropdown Option</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Subdropdown Option</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <label>Section Name</label>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">See all →</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Main Item 2</a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Main Item 3</a>
+                        <ul class="dropdown">
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Option</a>
+                            </li>
+                            <li>
+                                <a href="#">See all →</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </nav><!-- End Top Bar -->
+        <!-- Header -->
+        <div class="row">
+            <div class="large-12 columns">
+                <img src="http://placehold.it/1600x600&amp;text=Header"><br>
+                <br>
+            </div>
+        </div><!-- End Header -->
+        <div class="row">
+            <div class="large-3 panel columns">
+                <h4>
+                    Add Service Request
+                </h4>
+                <form>
+                    <label>Name</label>
+                    <input type="text" placeholder="Name" id="name" name="name"> 
+                    <label>Last Name</label> 
+                    <input type="text" placeholder="Last Name" id="lastName" name="lastName"> 
+                    <label>Email</label> 
+                    <input type="text" placeholder="Email" id="email" name="email"> 
+                    <label>Service request</label> 
+                    <input type="text" placeholder="Service request" id="srx" name="srx"> 
+                    <label>Status</label> 
+                    <select id="status" name="status">
+                        <option>
+                            - Status -
+                        </option>
+                        <option>
+                            Confirmed
+                        </option>
+                        <option>
+                            Checking more procedures
+                        </option>
+                        <option>
+                            To call back
+                        </option>
+                        <option>
+                            Sent to manofacturer
+                        </option>
+                        <option>
+                            Waiting on Customer
+                        </option>
+                        <option>
+                            Abandoned
+                        </option>
+                        <option>
+                            Closed
+                        </option>
+                    </select>
+                    <label>Description</label> 
+                    <textarea rows="10" id="descr" name="descr">
+ante ipsum primis in faucibus. Morbi nisi libero, p...
+                    </textarea>
+                    <input type="button" class="right" value="Add Service Request" onclick="createSrx()"><br><br>
+                            <div id="srxCreado" class="right"></div>
+
+                </form>
+                <br>
+            </div>
+            <div class="large-9 columns">
+                <div class="panel">
+                    <h3>Edit Service Request</h3>
+                    <div class="row">
+                        <form>
+                            <div class="row">
+                              <div class="large-4 columns">
+                                <label>Name</label>
+                                <input type="text" name="nameEdit" placeholder="Name">
+                              </div>
+                              <div class="large-4 columns left">
+                                <label>Last Name</label>
+                                <input type="text" name="lastNameEdit" placeholder="Last Name">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="large-4 columns">
+                                <label>Email</label>
+                                <input type="text" name="emailEdit" placeholder="Email">
+                              </div>
+                              <div class="large-4 columns left">
+                                <label>Rervice Request</label>
+                                <input type="number" name="srxEdit" placeholder="Service Reqest">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="large-4 columns">
+                                <label>Status</label>
+                                    <select name="statusEdit">
+                                        <option>
+                                            - Status -
+                                        </option>
+                                        <option>
+                                            Confirmed
+                                        </option>
+                                        <option>
+                                            Checking more procedures
+                                        </option>
+                                        <option>
+                                            To call back
+                                        </option>
+                                        <option>
+                                            Sent to manofacturer
+                                        </option>
+                                        <option>
+                                            Waiting on Customer
+                                        </option>
+                                        <option>
+                                            Abandoned
+                                        </option>
+                                        <option>
+                                            Closed
+                                        </option>
+                                    </select>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="large-12 columns">
+                                <label>Description</label>
+                                <textarea placeholder="Aditional data about the Service Request or client" name="descrEdit" rows="8"></textarea>
+                              </div>
+                            </div>
+                        </form>                        
+                    </div>
+                </div>
+                <h5>Search Service Request</h5>
+                <div class="row">
+                    <div class="large-12 columns">
+                        
+                        <div class="panel">
+                            <form>
+                               <div class="row">
+                                <div class="large-7 columns">
+                                  <div class="row collapse">
+                                    <div class="small-9 columns">
+                                      <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
+                                    </div>
+                                    <div class="small-3 columns">
+                                      <input type="button" value="Search!" onclick="searchSrx()">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <h5>Service Requests List</h5>
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th width='150'>Name</th>
+                              <th width='150'>Last Name</th>
+                              <th width='150'>Email</th>
+                              <th width='150'>Service Request</th>
+                              <th width='150'>Status</th>
+                              <th width='200'>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="srxsList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- Footer -->
+        <footer class="row">
+            <div class="large-12 columns">
+                <hr>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>
+                            © Copyright no one at all. Go to town.
+                        </p>
+                    </div>
+                    <div class="large-6 columns">
+                        <ul class="inline-list right">
+                            <li>
+                                <a href="#">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+        <script>
+            document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+                    '.js><\/script>')
+        </script>
+        <script src="js/foundation.min.js"></script> 
+        <script src="js/vendor/custom.modernizr.js"></script>
+         <script>
+        $(document).foundation();
+        </script>
+<script>
+//window.onload=listadosrxs();
+$(document).on("ready",listadosrxs);
+    function listadosrxs(){
+        var srxsList=$("#srxsList");
+        srxsList.load("sside/consultainicial.php");
+
+    }
+            //guardar con el boton
+            function createSrx(){
+                var name=$("#name").val(),
+                    lastName=$("#lastName").val(),
+                    email=$("#email").val(),
+                    srx=$("#srx").val(),
+                    status=$("#status").val(),
+                    descr=$("#descr").val(),
+                srxsList=$("#srxsList");
+                $.ajax({
+                data:  {a:name,b:lastName,c:email,d:srx,e:status,f:descr},
+                url:   'sside/stre.php',
+                type:  'get',
+                success:  function (response) {
+                        srxsList.html(response);
+                }
+            });
+
+            }
+            //buscar con el formulario
+            function searchSrx() {
+                var xmlhttp;
+                var s_srx = document.getElementById("s_srx").value;
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById('srxsList').innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "sside/luke.php?s_srx=" + s_srx, true);
+                xmlhttp.send();
+                alert("aakk");
+            }
+            //editar
+             function editarsrx() {
+                var xmlhttp;
+                var srx = document.getElementById("srx").value;
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById('srxsList').innerHTML = xmlhttp.responseText;                        
+                    }
+                }
+                xmlhttp.open("GET", "sside/edith.php?&d=" + srx, true);
+                xmlhttp.send();
+            }
+        </script>
+    </body>
+</html>
+<!-- 
+    To do
+        - Ejecutar acciones onSubmit para los formunarios.
+
+    -->
