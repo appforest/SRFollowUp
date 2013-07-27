@@ -164,8 +164,7 @@
 ante ipsum primis in faucibus. Morbi nisi libero, p...
                     </textarea>
                     <input type="button" class="right" value="Add Service Request" onclick="createSrx()"><br><br>
-                            <div id="srxCreado" class="right"></div>
-
+                    <div id="srxCreatedmsg" class="right"></div>
                 </form>
                 <br>
             </div>
@@ -317,67 +316,46 @@ ante ipsum primis in faucibus. Morbi nisi libero, p...
         $(document).foundation();
         </script>
 <script>
-//window.onload=listadosrxs();
-$(document).on("ready",listadosrxs);
-    function listadosrxs(){
+//List all the service requests (Srx) when the document is ready
+$(document).on("ready",listsrxs);
+    function listsrxs(){
         var srxsList=$("#srxsList");
-        srxsList.load("sside/consultainicial.php");
+        srxsList.load("sside/listAll.php");
 
     }
-            //guardar con el boton
-            function createSrx(){
-                var name=$("#name").val(),
-                    lastName=$("#lastName").val(),
-                    email=$("#email").val(),
-                    srx=$("#srx").val(),
-                    status=$("#status").val(),
-                    descr=$("#descr").val(),
-                srxsList=$("#srxsList");
-                $.ajax({
-                data:  {a:name,b:lastName,c:email,d:srx,e:status,f:descr},
-                url:   'sside/stre.php',
-                type:  'get',
-                success:  function (response) {
-                        srxsList.html(response);
-                }
-            });
+    //Store a new Srx using the "Add Service Request" button
+    function createSrx(){
+        var name=$("#name").val(),
+            lastName=$("#lastName").val(),
+            email=$("#email").val(),
+            srx=$("#srx").val(),
+            status=$("#status").val(),
+            descr=$("#descr").val(),
+            srxsList=$("#srxsList");
+        $.ajax({
+        data:  {a:name,b:lastName,c:email,d:srx,e:status,f:descr},
+        url:   'sside/store.php',
+        type:  'get',
+        success:  function (response) {
+                srxsList.html(response);
+        }
+    });
 
+    }
+    //The search form action
+    // - By now it only loos for Srx by Srx number
+    function searchSrx() {
+        var s_srx=$("#s_srx").val();
+        $.ajax({
+            data: {s_srx:s_srx},
+            url: 'sside/search.php',
+            type: 'get',
+            success: function(response){
+                srxsList.html(response);
             }
-            //buscar con el formulario
-            function searchSrx() {
-                var xmlhttp;
-                var s_srx = document.getElementById("s_srx").value;
-                if (window.XMLHttpRequest) {
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById('srxsList').innerHTML = xmlhttp.responseText;
-                    }
-                }
-                xmlhttp.open("GET", "sside/luke.php?s_srx=" + s_srx, true);
-                xmlhttp.send();
-                alert("aakk");
-            }
-            //editar
-             function editarsrx() {
-                var xmlhttp;
-                var srx = document.getElementById("srx").value;
-                if (window.XMLHttpRequest) {
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById('srxsList').innerHTML = xmlhttp.responseText;                        
-                    }
-                }
-                xmlhttp.open("GET", "sside/edith.php?&d=" + srx, true);
-                xmlhttp.send();
-            }
+        });
+
+    }
         </script>
     </body>
 </html>
