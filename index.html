@@ -13,11 +13,7 @@
             Service Request Follow Up
         </title>
         <link rel="stylesheet" href="css/foundation.css">
-        <style>
-        textarea{
-                        height: 100%;
-                    }
-        </style>
+        <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
         <!-- Navigation -->
@@ -120,9 +116,9 @@
         </div><!-- End Header -->
         <div class="row">
             <div class="large-3 panel columns">
-                <h4>
+                <h5 class="docs header">
                     Add Service Request
-                </h4>
+                </h5>
                 <form>
                     <label>Name</label>
                     <input type="text" placeholder="Name" id="name" name="name"> 
@@ -131,7 +127,7 @@
                     <label>Email</label> 
                     <input type="text" placeholder="Email" id="email" name="email"> 
                     <label>Service request</label> 
-                    <input type="text" placeholder="Service request" id="srx" name="srx"> 
+                    <input type="number" placeholder="Service request" id="srx" name="srx"> 
                     <label>Status</label> 
                     <select id="status" name="status">
                         <option>
@@ -161,16 +157,16 @@
                     </select>
                     <label>Description</label> 
                     <textarea rows="10" id="descr" name="descr">
-ante ipsum primis in faucibus. Morbi nisi libero, p...
-                    </textarea>
-                    <input type="button" class="right" value="Add Service Request" onclick="createSrx()"><br><br>
+Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</textarea>
+                      <input type="button" class="small button right" value="Add Service Request" onclick="createSrx()"><br><br>
                     <div id="srxCreatedmsg" class="right"></div>
                 </form>
                 <br>
             </div>
             <div class="large-9 columns">
                 <div class="panel">
-                    <h3>Edit Service Request</h3>
+                    <span class="right">(Not working yet)</span>
+                    <h4>Edit Service Request</h4>
                     <div class="row">
                         <form>
                             <div class="row">
@@ -233,7 +229,7 @@ ante ipsum primis in faucibus. Morbi nisi libero, p...
                         </form>                        
                     </div>
                 </div>
-                <h5>Search Service Request</h5>
+                <h4>Search Service Request</h4>
                 <div class="row">
                     <div class="large-12 columns">
                         
@@ -242,12 +238,14 @@ ante ipsum primis in faucibus. Morbi nisi libero, p...
                                <div class="row">
                                 <div class="large-7 columns">
                                   <div class="row collapse">
-                                    <div class="small-9 columns">
+                                    <form><p><strong>Search by ID:</strong></p>
+                                    <div class="small-8 columns">
                                       <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
                                     </div>
-                                    <div class="small-3 columns">
-                                      <input type="button" value="Search!" onclick="searchSrx()">
+                                    <div class="small-offset-1 small-3 columns">
+                                      <input type="button" class="small button" id="s_srxBtn" value="Search!">
                                     </div>
+                                </form>
                                   </div>
                                 </div>
                               </div>
@@ -259,17 +257,17 @@ ante ipsum primis in faucibus. Morbi nisi libero, p...
         </div>
         <div class="row">
             <div class="large-12 columns">
-                <h5>Service Requests List</h5>
+                <h4>Service Requests List</h4>
                 <div class="panel">
                     <table>
                         <thead>
                             <tr>
-                              <th width='150'>Name</th>
-                              <th width='150'>Last Name</th>
-                              <th width='150'>Email</th>
-                              <th width='150'>Service Request</th>
-                              <th width='150'>Status</th>
-                              <th width='200'>Description</th>
+                                <th width='150'>Service Request</th>
+                                <th width='150'>Name</th>
+                                <th width='150'>Last Name</th>
+                                <th width='150'>Email</th>
+                                <th width='150'>Status</th>
+                                <th width='200'>Description</th>
                             </tr>
                         </thead>
                         <tbody id="srxsList"></tbody>
@@ -283,7 +281,7 @@ ante ipsum primis in faucibus. Morbi nisi libero, p...
                 <div class="row">
                     <div class="large-6 columns">
                         <p>
-                            © Copyright no one at all. Go to town.
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SRFollowUp</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/appforest/SRFollowUp/" property="cc:attributionName" rel="cc:attributionURL">App Forest</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">Creative Commons Reconocimiento-CompartirIgual 3.0 Unported License</a>.<br />Creado a partir de la obra en <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/appforest/SRFollowUp/" rel="dct:source">https://github.com/appforest/SRFollowUp/</a>.
                         </p>
                     </div>
                     <div class="large-6 columns">
@@ -306,61 +304,13 @@ ante ipsum primis in faucibus. Morbi nisi libero, p...
             </div>
         </footer>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+
         <script>
             document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
                     '.js><\/script>')
         </script>
         <script src="js/foundation.min.js"></script> 
         <script src="js/vendor/custom.modernizr.js"></script>
-         <script>
-        $(document).foundation();
-        </script>
-<script>
-//List all the service requests (Srx) when the document is ready
-$(document).on("ready",listsrxs);
-    function listsrxs(){
-        var srxsList=$("#srxsList");
-        srxsList.load("sside/listAll.php");
-
-    }
-    //Store a new Srx using the "Add Service Request" button
-    function createSrx(){
-        var name=$("#name").val(),
-            lastName=$("#lastName").val(),
-            email=$("#email").val(),
-            srx=$("#srx").val(),
-            status=$("#status").val(),
-            descr=$("#descr").val(),
-            srxsList=$("#srxsList");
-        $.ajax({
-        data:  {a:name,b:lastName,c:email,d:srx,e:status,f:descr},
-        url:   'sside/store.php',
-        type:  'get',
-        success:  function (response) {
-                srxsList.html(response);
-        }
-    });
-
-    }
-    //The search form action
-    // - By now it only loos for Srx by Srx number
-    function searchSrx() {
-        var s_srx=$("#s_srx").val();
-        $.ajax({
-            data: {s_srx:s_srx},
-            url: 'sside/search.php',
-            type: 'get',
-            success: function(response){
-                srxsList.html(response);
-            }
-        });
-
-    }
-        </script>
+        <script src="js/actions.js"></script>
     </body>
 </html>
-<!-- 
-    To do
-        - Ejecutar acciones onSubmit para los formunarios.
-
-    -->

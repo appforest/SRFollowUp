@@ -1,0 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(43, 166, 203)!important;
+    text-rendering: optimizelegibility;
+    margin-top: 0.2em;
+}
+textarea{
+	height: 100%;
+}

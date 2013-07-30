@@ -1,24 +1,24 @@
 <?php
-$nombre = $_GET['a'];
-$apellido = $_GET['b'];
+$name = $_GET['a'];
+$lastName = $_GET['b'];
 $email = $_GET['c'];
-$caso = $_GET['d'];
-$estado = $_GET['e'];
+$srx = $_GET['d'];
+$status = $_GET['e'];
 $descr = $_GET['f'];
 
-$bd = new SQLite3("casos.db");
-$bd->exec("INSERT INTO casostm (id, nombre, apellido, email, caso, estado, descr) VALUES(NULL, '$nombre', '$apellido', '$email', '$caso', '$estado', '$descr')");
-$resultado=  $bd->query("SELECT * FROM casostm;");
-while($fila = $resultado->fetchArray()){
+$db = new SQLite3("srxfu.db");
+$db->exec("INSERT INTO srxs (id, name, lastName, email, srx, status, descr) VALUES(NULL, '$name', '$lastName', '$email', '$srx', '$status', '$descr')");
+$result=  $db->query("SELECT * FROM srxs;");
+while($row = $result->fetchArray()){
 	echo "
 			<tr>
-				<td>".$fila["nombre"]."</td>".
-				"<td>".$fila["apellido"]."</td>".
-				"<td>".$fila["email"]."</td>".
-				"<td>".$fila["caso"]."</td>".
-				"<td>".$fila["estado"]."</td>".
-				"<td>".$fila["descr"]."</td>";			
+				 <td><a href=''>".$row["srx"]."</a></td>".
+				"<td>".$row["name"]."</td>".
+				"<td>".$row["lastName"]."</td>".
+				"<td>".$row["email"]."</td>".
+				"<td>".$row["status"]."</td>".
+				"<td>".$row["descr"]."</td>";			
 }
 
-$bd->close();
+$db->close();
 ?>

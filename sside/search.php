@@ -1,18 +1,18 @@
 <?php
-$s_caso = $_GET['s_caso'];
+$s_srx = $_GET['s_srx'];
 
-$bd = new SQLite3("casos.db");
-$resultado=  $bd->query("SELECT * FROM casostm WHERE caso=$s_caso;");
-while($fila = $resultado->fetchArray()){
+$db = new SQLite3("srxfu.db");
+$result=  $db->query("SELECT * FROM srxs WHERE srx=$s_srx;");
+while($row = $result->fetchArray()){
 	echo "
 			<tr>
-				<td>".$fila["nombre"]."</td>".
-				"<td>".$fila["apellido"]."</td>".
-				"<td>".$fila["email"]."</td>".
-				"<td>".$fila["caso"]."</td>".
-				"<td>".$fila["estado"]."</td>".
-				"<td>".$fila["descr"]."</td>";	
+				 <td><a href=''>".$row["srx"]."</a></td>".
+				"<td>".$row["name"]."</td>".
+				"<td>".$row["lastName"]."</td>".
+				"<td>".$row["email"]."</td>".
+				"<td>".$row["status"]."</td>".
+				"<td>".$row["descr"]."</td>";	
 }
 
-$bd->close();
+$db->close();
 ?>
