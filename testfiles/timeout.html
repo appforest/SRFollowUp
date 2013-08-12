@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script language="Javascript">
+
+var timeout;
+
+function timeout_trigger() {
+    document.getElementById('timeout_text').innerHTML = 'The timeout has been triggered';
+}
+
+function timeout_clear() {
+    clearTimeout(timeout);
+    document.getElementById('timeout_text').innerHTML = 'The timeout has been cleared';
+}
+
+function timeout_init() {
+    timeout = setTimeout('timeout_trigger()', 3000);
+    document.getElementById('timeout_text').innerHTML = 'The timeout has been started';
+}
+
+</script>
+
+<div>
+    <input type="button" value="test timeout" onclick="timeout_init()" />
+    <input type="button" value="clear timeout" onclick="timeout_clear()" />
+</div>
+<div id="timeout_text"></div>
+
+</body>
+</html>

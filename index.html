@@ -109,14 +109,14 @@
         </nav><!-- End Top Bar -->
         <!-- Header -->
         <div class="row">
-            <div class="large-12 columns">
-                <img src="http://placehold.it/1600x600&amp;text=Header"><br>
+            <div class="large-12 columns panel box">
+                <p><h1>Service Request Follow Up</h1>Header section<p>
                 <br>
             </div>
         </div><!-- End Header -->
         <div class="row">
          <div class="large-12 columns">
-            <div class="large-3 panel columns">
+            <div class="large-3 panel columns box">
                 <h5>
                     Add Service Request
                 </h5>
@@ -159,82 +159,17 @@
                     <label>Description</label> 
                     <textarea rows="10" id="descr" name="descr">
 Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</textarea>
-                      <input type="button" class="small button right" value="Add Service Request" onclick="createSrx()"><br><br>
+                      <input type="button" class="small button right" value="Add Service Request" onClick="addSrx()"><br><br>
                     <div id="srxCreatedmsg" class="right"></div>
                 </form>
                 <br>
-            </div>
+            </div><!-- /Add Service Request -->
             <div class="large-9 columns">
-                <div class="panel">
-                    <span class="right">(Not working yet)</span>
-                    <h4>Edit Service Request</h4>
-                    <div class="row">
-                        <form>
-                            <div class="row">
-                              <div class="large-4 columns">
-                                <label>Name</label>
-                                <input type="text" name="nameEdit" placeholder="Name">
-                              </div>
-                              <div class="large-4 columns left">
-                                <label>Last Name</label>
-                                <input type="text" name="lastNameEdit" placeholder="Last Name">
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="large-4 columns">
-                                <label>Email</label>
-                                <input type="text" name="emailEdit" placeholder="Email">
-                              </div>
-                              <div class="large-4 columns left">
-                                <label>Rervice Request</label>
-                                <input type="number" name="srxEdit" placeholder="Service Reqest">
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="large-4 columns">
-                                <label>Status</label>
-                                    <select name="statusEdit">
-                                        <option>
-                                            - Status -
-                                        </option>
-                                        <option>
-                                            Confirmed
-                                        </option>
-                                        <option>
-                                            Checking more procedures
-                                        </option>
-                                        <option>
-                                            To call back
-                                        </option>
-                                        <option>
-                                            Sent to manofacturer
-                                        </option>
-                                        <option>
-                                            Waiting on Customer
-                                        </option>
-                                        <option>
-                                            Abandoned
-                                        </option>
-                                        <option>
-                                            Closed
-                                        </option>
-                                    </select>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="large-12 columns">
-                                <label>Description</label>
-                                <textarea placeholder="Aditional data about the Service Request or client" name="descrEdit" rows="7"></textarea>
-                              </div>
-                            </div>
-                        </form>                        
-                    </div>
-                </div>
+                <!-- vacio -->
                 <h4>Search Service Request</h4>
                 <div class="row">
                     <div class="large-12 columns">
-                        
-                        <div class="panel">
+                        <div class="panel box">
                             <form>
                                <div class="row">
                                 <div class="large-7 columns">
@@ -244,7 +179,7 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
                                       <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
                                     </div>
                                     <div class="small-offset-1 small-3 columns">
-                                      <input type="button" class="small button" id="s_srxBtn" value="Search!">
+                                      <input type="button" class="small button" id="s_srxBtn" value="Search!" onClick="searchSrx()">
                                     </div>
                                 </form>
                                   </div>
@@ -260,7 +195,7 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
         <div class="row">
             <div class="large-12 columns">
                 <h3>Service Requests List</h3>
-                <div class="panel">
+                <div class="panel box">
                     <table>
                         <thead>
                             <tr>
@@ -270,6 +205,8 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
                                 <th width='150'>Email</th>
                                 <th width='150'>Status</th>
                                 <th width='200'>Description</th>
+                                <th width='50'>Edit</th>
+                                <th width='80'>Delete</th>
                             </tr>
                         </thead>
                         <tbody id="srxsList"></tbody>
@@ -277,11 +214,12 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
                 </div>
             </div>
         </div><!-- Footer -->
-        <footer class="row">
-            <div class="large-12 columns">
-                <hr>
-                <div class="row">
-                    <div class="large-6 columns">
+  <footer>
+    <div class="row">
+      <div class="twelve columns">
+      <br><br>
+      <div class="row">
+        <div class="large-6 columns">
                         <p>
                             <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SRFollowUp</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/appforest/SRFollowUp/" property="cc:attributionName" rel="cc:attributionURL">App Forest</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
                         </p>
@@ -305,6 +243,82 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
                 </div>
             </div>
         </footer>
+        <input type="button" value="" data-reveal-id="modalLogin" id="modal">
+<!-- Modal -->
+ 
+  <div class="reveal-modal" id="modalLogin">
+    <div class="editSrx">
+        <div class="row" id="div_editSrx">
+            <h5>Edit Service Request</h5>
+            <input id="currentSrx" hidden>
+            <form>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <label>Name</label>
+                    <input type="text" name="nameEdit" placeholder="Name" id="u_name">
+                  </div>
+                  <div class="large-4 columns left">
+                    <label>Last Name</label>
+                    <input type="text" name="lastNameEdit" placeholder="Last Name" id="u_lastName">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <label>Email</label>
+                    <input type="text" name="emailEdit" placeholder="Email" id="u_email">
+                  </div>
+                  <div class="large-4 columns left">
+                    <label>Rervice Request</label>
+                    <input type="number" name="srxEdit" placeholder="Service Reqest" id="u_srx">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <label>Status</label>
+                        <select name="statusEdit" id="u_status">
+                            <option>
+                                - Status -
+                            </option>
+                            <option>
+                                Confirmed
+                            </option>
+                            <option>
+                                Checking more procedures
+                            </option>
+                            <option>
+                                To call back
+                            </option>
+                            <option>
+                                Sent to manofacturer
+                            </option>
+                            <option>
+                                Waiting on Customer
+                            </option>
+                            <option>
+                                Abandoned
+                            </option>
+                            <option>
+                                Closed
+                            </option>
+                        </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label>Description</label>
+                    <textarea placeholder="Aditional data about the Service Request or client" name="descrEdit" rows="7" id="u_descr"></textarea>
+                  </div>
+                </div>
+                <input type="button" class="small button right" id="update_srxBtn" value="Update" onClick="updateSrx()">
+            </form>
+        </div>
+    </div><!-- /Edit Service Request -->
+    <!-- Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden. -->
+    <a href="#" class="close-reveal-modal">&times;</a>
+  </div>
+</div>
+
+
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
 
         <script>
@@ -313,6 +327,6 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
         </script>
         <script src="js/foundation.min.js"></script> 
         <script src="js/vendor/custom.modernizr.js"></script>
-        <script src="js/actions.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

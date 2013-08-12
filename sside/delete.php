@@ -1,5 +1,8 @@
 <?php
+$d_id = $_GET['d_id'];
+
 $db = new SQLite3("srxfu.db");
+$delete=  $db->query("DELETE FROM srxs WHERE id='$d_id';");
 $result=  $db->query("SELECT * FROM srxs;");
 while($row = $result->fetchArray()){
 	echo "
