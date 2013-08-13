@@ -89,7 +89,6 @@ $(document).on("ready",listsrxs);
             descr=$("#u_descr").val(),
             recordId=$("#recordId").val();
             if (recordId===""){
-                alert("nonono");
                 return false;
             }
         $.ajax({
@@ -100,4 +99,5 @@ $(document).on("ready",listsrxs);
                 srxsList.html(response);
             }
         });
+        $('#modalEdit').foundation('reveal', 'close');
     }

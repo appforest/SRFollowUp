@@ -6,6 +6,7 @@ while($row = $result->fetchArray()){
 	echo '
 	<form>
 		<h5>Edit Service Request</h5>
+        <input id="currentSrx" hidden>
         <div class="row">
           <div class="large-4 columns">
             <label>Name</label>
@@ -64,7 +65,10 @@ while($row = $result->fetchArray()){
             <input type="hidden" value="'.$row['id'].'" id="recordId" disabled>
           </div>
         </div>
-        <input type="button" class="small button right" id="update_srxBtn" value="Update" onClick="updateSrx()">
+        <div class="right">
+            <input type="button" class="small button secondary" value="Cancel" onClick="updateSrx()">
+            <input type="button" class="small button" id="update_srxBtn" value="Update" onClick="updateSrx()">
+        </div>
     </form>
     ';
 }

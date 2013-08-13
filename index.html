@@ -114,13 +114,38 @@
                 <br>
             </div>
         </div><!-- End Header -->
+        <div class="row">        <!-- Seach -->
+            <div class="large-12 columns">
+                <h4>Search Service Request</h4>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="panel box">
+                           <div class="row">
+                            <div class="large-7 columns">
+                              <div class="row collapse">
+                                <form><p><strong>Search by ID:</strong></p>
+                                    <div class="small-8 columns">
+                                      <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
+                                    </div>
+                                    <div class="small-offset-1 small-3 columns">
+                                      <input type="button" class="small button" id="s_srxBtn" value="Search!" onClick="searchSrx()">
+                                    </div>
+                                </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /Search -->
         <div class="row">
-         <div class="large-12 columns">
-            <div class="large-3 panel columns box">
+        <div class="large-12 columns">
+            <div class="large-3 panel columns box"><!-- Add Service Request -->
                 <h5>
                     Add Service Request
                 </h5>
-                <form>
+                <form id="form_addSrx">
                     <label>Name</label>
                     <input type="text" placeholder="Name" id="name" name="name"> 
                     <label>Last Name</label> 
@@ -157,45 +182,15 @@
                         </option>
                     </select>
                     <label>Description</label> 
-                    <textarea rows="10" id="descr" name="descr">
-Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</textarea>
-                      <input type="button" class="small button right" value="Add Service Request" onClick="addSrx()"><br><br>
-                    <div id="srxCreatedmsg" class="right"></div>
+                    <textarea rows="10" id="descr" name="descr"></textarea>
+                    <input type="button" class="small button right" value="Add Service Request" onClick="addSrx()">
+                    <input type="button" class="small button right secondary" value="Clear"  onClick="$('#form_addSrx')[0].reset()">
                 </form>
                 <br>
             </div><!-- /Add Service Request -->
             <div class="large-9 columns">
-                <!-- vacio -->
-                <h4>Search Service Request</h4>
-                <div class="row">
-                    <div class="large-12 columns">
-                        <div class="panel box">
-                            <form>
-                               <div class="row">
-                                <div class="large-7 columns">
-                                  <div class="row collapse">
-                                    <form><p><strong>Search by ID:</strong></p>
-                                    <div class="small-8 columns">
-                                      <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
-                                    </div>
-                                    <div class="small-offset-1 small-3 columns">
-                                      <input type="button" class="small button" id="s_srxBtn" value="Search!" onClick="searchSrx()">
-                                    </div>
-                                </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                <h3>Service Requests List</h3>
                 <div class="panel box">
+                <h3>Service Requests List</h3>
                     <table>
                         <thead>
                             <tr>
@@ -213,109 +208,47 @@ Lorem filumini huminela akroled.Ante ipsum  in faucibus; morbu nisi libero.</tex
                     </table>
                 </div>
             </div>
-        </div><!-- Footer -->
-  <footer>
+        </div>
+    </div>
+  <footer><!-- Footer -->
     <div class="row">
       <div class="twelve columns">
       <br><br>
       <div class="row">
         <div class="large-6 columns">
-                        <p>
-                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SRFollowUp</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/appforest/SRFollowUp/" property="cc:attributionName" rel="cc:attributionURL">App Forest</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
-                        </p>
-                    </div>
-                    <div class="large-6 columns">
-                        <ul class="inline-list right">
-                            <li>
-                                <a href="#">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <input type="button" value="" data-reveal-id="modalLogin" id="modal">
-<!-- Modal -->
- 
-  <div class="reveal-modal" id="modalLogin">
-    <div class="editSrx">
-        <div class="row" id="div_editSrx">
-            <h5>Edit Service Request</h5>
-            <input id="currentSrx" hidden>
-            <form>
-                <div class="row">
-                  <div class="large-4 columns">
-                    <label>Name</label>
-                    <input type="text" name="nameEdit" placeholder="Name" id="u_name">
-                  </div>
-                  <div class="large-4 columns left">
-                    <label>Last Name</label>
-                    <input type="text" name="lastNameEdit" placeholder="Last Name" id="u_lastName">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-4 columns">
-                    <label>Email</label>
-                    <input type="text" name="emailEdit" placeholder="Email" id="u_email">
-                  </div>
-                  <div class="large-4 columns left">
-                    <label>Rervice Request</label>
-                    <input type="number" name="srxEdit" placeholder="Service Reqest" id="u_srx">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-4 columns">
-                    <label>Status</label>
-                        <select name="statusEdit" id="u_status">
-                            <option>
-                                - Status -
-                            </option>
-                            <option>
-                                Confirmed
-                            </option>
-                            <option>
-                                Checking more procedures
-                            </option>
-                            <option>
-                                To call back
-                            </option>
-                            <option>
-                                Sent to manofacturer
-                            </option>
-                            <option>
-                                Waiting on Customer
-                            </option>
-                            <option>
-                                Abandoned
-                            </option>
-                            <option>
-                                Closed
-                            </option>
-                        </select>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <label>Description</label>
-                    <textarea placeholder="Aditional data about the Service Request or client" name="descrEdit" rows="7" id="u_descr"></textarea>
-                  </div>
-                </div>
-                <input type="button" class="small button right" id="update_srxBtn" value="Update" onClick="updateSrx()">
-            </form>
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SRFollowUp</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/appforest/SRFollowUp/" property="cc:attributionName" rel="cc:attributionURL">Diego Coy</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+            </p>
         </div>
+        <div class="large-6 columns">
+            <ul class="inline-list right">
+                <li>
+                    <a href="#">Link 1</a>
+                </li>
+                <li>
+                    <a href="#">Link 2</a>
+                </li>
+                <li>
+                    <a href="#">Link 3</a>
+                </li>
+                <li>
+                    <a href="#">Link 4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+  </footer>
+<!-- Modal -->
+    <div class="reveal-modal" id="modalEdit">
+        <div class="large-6 large-centered columns editSrx">
+            <div class="row" id="div_editSrx">
+                <!-- Content is added by edit.php via Ajax -->
+            </div>
     </div><!-- /Edit Service Request -->
     <!-- Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden. -->
-    <a href="#" class="close-reveal-modal">&times;</a>
-  </div>
+    <a href="#" class="close-reveal-modal" id="closeModal">&times;</a>
+  </div><!-- /Modal -->
 </div>
 
 
