@@ -10,16 +10,10 @@ So far you can:
 
 - Add Srx's to the database and they will be show on a list.
 - You can search Srx's by number/code.
+- Edit Srx's.
+- Delete Srx's.
 
-What is not implemented yet:
 
-- I cannot figure out how to relate the printed Srx number to its own value so an Ajax request can be made in order to add the Srx to the edit form.
-
-To do:
-
-- Different search methods (by name, last name or email).
-- Add a 'Creation time' column.
-- Add a delete button (with a confirmation dialog).
 
 Licensing:
 
