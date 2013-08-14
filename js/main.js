@@ -31,14 +31,20 @@ $(document).on("ready",listsrxs);
             type:  'get',
             success:  function (response) {
                 srxsList.html(response);
+                clearAddform(); //We call the function that clears the Add SRX form if there is a successful response
             }
         });
     }
-    //The search form action
+    //The Add SRX form is cleared
+    function clearAddform(){
+        $('#form_addSrx')[0].reset();
+    }
+    //The search form actions
     // - It only loos for Srx by Srx number by now
     function searchSrx() {
         var srxsList=$("#srxsList"),
-            s_srx=$("#s_srx").val();
+            s_srx=$("#s_srx").val(),
+            searchMsg=$("#searchMsg");
             if ( $.trim( $('#s_srx').val() ) == '' ){
                 alert('Please enter a valid value');
                 return false
@@ -49,13 +55,27 @@ $(document).on("ready",listsrxs);
             type: 'get',
             success: function(response){
                 srxsList.html(response);
+                if(response){
+                    searchMsg.fadeOut();
+                }else{
+                    searchMsg.fadeIn();
+                    searchMsg.html('<div data-alert class="alert-box">Couldnt find any matching records, try again<a href="#" class="close" id="closeAlert" onClick="focusSearch();">&times;</a></div><br>');
+                    $("#s_srx").focus();
+                }
             }
         });
     }
+    function focusSearch(){
+        $("#s_srx").select();
+    };
     //Delete Srx
     function deleteSrx(srxId){ //srxId is set by the <a> element of the php files as $row['id']
         var srxsList=$("#srxsList"),
-            d_id=srxId; 
+            d_id=srxId;
+            var sure = confirm("Are you sure?");
+            if (sure===false){  //If you click 'cancel' on the confirm...
+                return false;   //Nothing will happen
+            }                   //Else, the record is deleted:
         $.ajax({
             data: {d_id:d_id},
             url: 'sside/delete.php',

@@ -22,7 +22,7 @@
                 <!-- Title Area -->
                 <li class="name">
                     <h1>
-                        <a href="#">Top Bar Title</a>
+                        <a href="#">Service Request Follow Up</a>
                     </h1>
                 </li>
                 <li class="toggle-topbar menu-icon">
@@ -110,28 +110,27 @@
         <!-- Header -->
         <div class="row">
             <div class="large-12 columns panel box">
-                <p><h1>Service Request Follow Up</h1>Header section<p>
-                <br>
+                <p><h1>Service Request Follow Up</h1></p>
+                <p>Hi, I am the header<p>
             </div>
         </div><!-- End Header -->
         <div class="row">        <!-- Seach -->
             <div class="large-12 columns">
-                <h4>Search Service Request</h4>
+                
                 <div class="row">
                     <div class="large-12 columns">
                         <div class="panel box">
-                           <div class="row">
-                            <div class="large-7 columns">
-                              <div class="row collapse">
-                                <form><p><strong>Search by ID:</strong></p>
-                                    <div class="small-8 columns">
+                            <div class="row">
+                                <div class="large-6 columns">
+                                  <div class="row collapse">
+                                    <label for="s_srx"><h4>Search Service Request:</h4></label>
+                                    <div class="small-10 columns">
                                       <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
                                     </div>
-                                    <div class="small-offset-1 small-3 columns">
-                                      <input type="button" class="small button" id="s_srxBtn" value="Search!" onClick="searchSrx()">
+                                    <div class="small-2 columns">
+                                      <input type="button" class="button prefix" id="s_srxBtn" value="Search!" onClick="searchSrx()">
                                     </div>
-                                </form>
-                                </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -146,15 +145,15 @@
                     Add Service Request
                 </h5>
                 <form id="form_addSrx">
-                    <label>Name</label>
+                    <label for="name">Name</label>
                     <input type="text" placeholder="Name" id="name" name="name"> 
-                    <label>Last Name</label> 
+                    <label for="lastName">Last Name</label> 
                     <input type="text" placeholder="Last Name" id="lastName" name="lastName"> 
-                    <label>Email</label> 
+                    <label for="email">Email</label> 
                     <input type="text" placeholder="Email" id="email" name="email"> 
-                    <label>Service request</label> 
+                    <label for="srx">Service request</label> 
                     <input type="number" placeholder="Service request" id="srx" name="srx"> 
-                    <label>Status</label> 
+                    <label for="status">Status</label> 
                     <select id="status" name="status">
                         <option>
                             - Status -
@@ -181,16 +180,16 @@
                             Closed
                         </option>
                     </select>
-                    <label>Description</label> 
+                    <label for="descr">Description</label> 
                     <textarea rows="10" id="descr" name="descr"></textarea>
                     <input type="button" class="small button right" value="Add Service Request" onClick="addSrx()">
-                    <input type="button" class="small button right secondary" value="Clear"  onClick="$('#form_addSrx')[0].reset()">
+                    <input type="button" class="small button right secondary" value="Clear"  onClick="clearAddform()">
                 </form>
                 <br>
             </div><!-- /Add Service Request -->
             <div class="large-9 columns">
                 <div class="panel box">
-                <h3>Service Requests List</h3>
+                <h3>Service Requests List</h3><div id="searchMsg"></div>
                     <table>
                         <thead>
                             <tr>
