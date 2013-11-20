@@ -14,7 +14,12 @@ $(document).on("ready",listsrxs);
 
         });
     }
+    $(".listAll").click(function(){
+        listsrxs();
+        $("#s_srx").val("");
+         $("#s_srx").focus();
 
+    });
 
     //Store a new Srx using the "Add Service Request" button
     function addSrx(){
@@ -37,7 +42,8 @@ $(document).on("ready",listsrxs);
     }
     //The Add SRX form is cleared
     function clearAddform(){
-        $('#form_addSrx')[0].reset();
+        $("#form_addSrx")[0].reset();
+        $("#name").focus();
     }
     //The search form actions
     // - It only loos for Srx by Srx number by now
@@ -66,6 +72,7 @@ $(document).on("ready",listsrxs);
         });
     }
     function focusSearch(){
+
         $("#s_srx").select();
     };
     //Delete Srx

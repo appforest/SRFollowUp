@@ -3,8 +3,8 @@
     <html class="no-js lt-ie9" lang="en">
     <![endif]-->
 <!--[if gt IE 8]>
-        <!-->
-<html class="no-js" lang="en">
+    <!-->
+    <html class="no-js" lang="en">
     <!--<![endif]-->
     <head>
         <meta charset="UTF-8">
@@ -16,10 +16,9 @@
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
-        <!-- Navigation -->
+        <!-- Navigation
         <nav class="top-bar">
             <ul class="title-area">
-                <!-- Title Area -->
                 <li class="name">
                     <h1>
                         <a href="#">Service Request Follow Up</a>
@@ -30,7 +29,6 @@
                 </li>
             </ul>
             <section class="top-bar-section">
-                <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-dropdown">
                         <a href="#">Main Item 1</a>
@@ -106,159 +104,160 @@
                     </li>
                 </ul>
             </section>
-        </nav><!-- End Top Bar -->
-        <!-- Header -->
-        <div class="row">
-            <div class="large-12 columns panel box">
-                <p><h1>Service Request Follow Up</h1></p>
-                <p>Hi, I am the header<p>
-            </div>
-        </div><!-- End Header -->
-        <div class="row">        <!-- Seach -->
-            <div class="large-12 columns">
-                
+        </nav>-->
+        <header>
+            <div class="row">
+              <div class="twelve columns">
                 <div class="row">
-                    <div class="large-12 columns">
-                        <div class="panel box">
-                            <div class="row">
-                                <div class="large-6 columns">
-                                  <div class="row collapse">
-                                    <label for="s_srx"><h4>Search Service Request:</h4></label>
-                                    <div class="small-10 columns">
-                                      <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
-                                    </div>
-                                    <div class="small-2 columns">
-                                      <input type="button" class="button prefix" id="s_srxBtn" value="Search!" onClick="searchSrx()">
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
+                    <div class="large-9 large-centered columns">
+                        <a href="javascript:;"><h1 class="listAll">Service Request Follow Up</h1></a>
+                        <p>Hi, please modify me!<p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><!-- /Search -->
-        <div class="row">
-        <div class="large-12 columns">
-            <div class="large-3 panel columns box"><!-- Add Service Request -->
-                <h5>
-                    Add Service Request
-                </h5>
-                <form id="form_addSrx">
-                    <label for="name">Name</label>
-                    <input type="text" placeholder="Name" id="name" name="name"> 
-                    <label for="lastName">Last Name</label> 
-                    <input type="text" placeholder="Last Name" id="lastName" name="lastName"> 
-                    <label for="email">Email</label> 
-                    <input type="text" placeholder="Email" id="email" name="email"> 
-                    <label for="srx">Service request</label> 
-                    <input type="number" placeholder="Service request" id="srx" name="srx"> 
-                    <label for="status">Status</label> 
-                    <select id="status" name="status">
-                        <option>
-                            - Status -
-                        </option>
-                        <option>
-                            Confirmed
-                        </option>
-                        <option>
-                            Checking more procedures
-                        </option>
-                        <option>
-                            To call back
-                        </option>
-                        <option>
-                            Sent to manofacturer
-                        </option>
-                        <option>
-                            Waiting on Customer
-                        </option>
-                        <option>
-                            Abandoned
-                        </option>
-                        <option>
-                            Closed
-                        </option>
-                    </select>
-                    <label for="descr">Description</label> 
-                    <textarea rows="10" id="descr" name="descr"></textarea>
-                    <input type="button" class="small button right" value="Add Service Request" onClick="addSrx()">
-                    <input type="button" class="small button right secondary" value="Clear"  onClick="clearAddform()">
-                </form>
-                <br>
-            </div><!-- /Add Service Request -->
-            <div class="large-9 columns">
+        </header>
+        <div class="row"><!-- Seach -->
+            <div class="large-12 columns">
                 <div class="panel box">
-                <h3>Service Requests List</h3><div id="searchMsg"></div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width='150'>Service Request</th>
-                                <th width='150'>Name</th>
-                                <th width='150'>Last Name</th>
-                                <th width='150'>Email</th>
-                                <th width='150'>Status</th>
-                                <th width='200'>Description</th>
-                                <th width='50'>Edit</th>
-                                <th width='80'>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody id="srxsList"></tbody>
-                    </table>
-                </div>
+                    <div class="row">
+                        <div class="large-6 columns">
+                          <div class="row collapse">
+                            <label for="s_srx"><h4>Search Service Request:</h4></label>
+                            <div class="small-10 columns">
+                              <input type="text" name="s_srx" id="s_srx" placeholder="Service Request Number">
+                          </div>
+                          <div class="small-2 columns">
+                              <input type="button" class="button prefix" id="s_srxBtn" value="Search!" onClick="searchSrx()">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div><!-- /Search -->
+<div class="row">
+    <div class="large-12 columns">
+        <div class="large-3 panel columns box"><!-- Add Service Request -->
+            <h5>
+                Add Service Request
+            </h5>
+            <form id="form_addSrx">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Name" id="name" name="name"> 
+                <label for="lastName">Last Name</label> 
+                <input type="text" placeholder="Last Name" id="lastName" name="lastName"> 
+                <label for="email">Email</label> 
+                <input type="text" placeholder="Email" id="email" name="email"> 
+                <label for="srx">Service request</label> 
+                <input type="number" placeholder="Service request" id="srx" name="srx"> 
+                <label for="status">Status</label> 
+                <select id="status" name="status">
+                    <option>
+                        - Status -
+                    </option>
+                    <option>
+                        Confirmed
+                    </option>
+                    <option>
+                        Checking more procedures
+                    </option>
+                    <option>
+                        To call back
+                    </option>
+                    <option>
+                        Sent to manofacturer
+                    </option>
+                    <option>
+                        Waiting on Customer
+                    </option>
+                    <option>
+                        Abandoned
+                    </option>
+                    <option>
+                        Closed
+                    </option>
+                </select>
+                <label for="descr">Description</label> 
+                <textarea rows="10" id="descr" name="descr"></textarea>
+                <input type="button" class="small button right" value="Add Service Request" onClick="addSrx()">
+                <input type="button" class="small button right secondary" value="Clear"  onClick="clearAddform()">
+            </form>
+        </div><!-- /Add Service Request -->
+        <div class="large-9 columns">
+            <div class="panel box">
+                <a href="javascript:;"><h3 class="listAll">Service Requests List</h3></a>
+                <div id="searchMsg"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width='150'>Service Request</th>
+                            <th width='150'>Name</th>
+                            <th width='150'>Last Name</th>
+                            <th width='150'>Email</th>
+                            <th width='150'>Status</th>
+                            <th width='200'>Description</th>
+                            <th width='50'>Edit</th>
+                            <th width='80'>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="srxsList"></tbody>
+                </table>
             </div>
         </div>
     </div>
-  <footer><!-- Footer -->
+</div>
+<footer><!-- Footer -->
     <div class="row">
       <div class="twelve columns">
-      <br><br>
-      <div class="row">
-        <div class="large-6 columns">
-            <p>
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SRFollowUp</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/appforest/SRFollowUp/" property="cc:attributionName" rel="cc:attributionURL">Diego Coy</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
-            </p>
-        </div>
-        <div class="large-6 columns">
-            <ul class="inline-list right">
-                <li>
-                    <a href="#">Link 1</a>
-                </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
-                <li>
-                    <a href="#">Link 3</a>
-                </li>
-                <li>
-                    <a href="#">Link 4</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </div>
-  </footer>
-<!-- Modal -->
-    <div class="reveal-modal" id="modalEdit">
-        <div class="large-6 large-centered columns editSrx">
-            <div class="row" id="div_editSrx">
-                <!-- Content is added by edit.php via Ajax -->
+          <br><br>
+          <div class="row">
+            <div class="large-6 columns">
+                <p>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SRFollowUp</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/appforest/SRFollowUp/" property="cc:attributionName" rel="cc:attributionURL">Diego Coy</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                </p>
             </div>
+            <div class="large-6 columns">
+                <ul class="inline-list right">
+                    <li>
+                        <a href="#">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#">Link 4</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Modal -->
+<div class="reveal-modal" id="modalEdit">
+    <div class="large-6 large-centered columns editSrx">
+        <div class="row" id="div_editSrx">
+            <!-- Content is added by edit.php via Ajax -->
+        </div>
     </div><!-- /Edit Service Request -->
     <!-- Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden. -->
     <a href="#" class="close-reveal-modal" id="closeModal">&times;</a>
-  </div><!-- /Modal -->
+</div><!-- /Modal -->
 </div>
 
 
-        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
 
-        <script>
-            document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-                    '.js><\/script>')
-        </script>
-        <script src="js/foundation.min.js"></script> 
-        <script src="js/vendor/custom.modernizr.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+<script>
+document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+    '.js><\/script>')
+</script>
+<script src="js/foundation.min.js"></script> 
+<script src="js/vendor/custom.modernizr.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>

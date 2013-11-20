@@ -2,7 +2,7 @@
 $s_srx = $_GET['s_srx'];
 
 $db = new SQLite3("srxfu.db");
-$result=  $db->query("SELECT * FROM srxs WHERE srx=$s_srx;");
+$result=  $db->query("SELECT * FROM srxs WHERE srx like '%$s_srx%'");
 while($row = $result->fetchArray()){
 	echo "
 			<tr>
